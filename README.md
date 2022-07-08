@@ -7,7 +7,7 @@ This needs a list of "banned" ips seperated by spaces. I use fail2ban on a linux
 fail2ban-client status sshd > bannedip
 ```
 
-and edit it to show only ip addresses seperated by spaces.
+and edit it to show only ip addresses seperated by spaces. The script uses the geoiplookup program.
 
 Build or run:
 
