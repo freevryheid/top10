@@ -1,11 +1,13 @@
 # top10
 Find top10 countries in a banned ip list
 
-I use fail2ban on a linux server. I generate bannedip list using:
+This needs a list of "banned" ips seperated by spaces. I use fail2ban on a linux server. I generate bannedip list using:
 
 ``` sh
 fail2ban-client status sshd > bannedip
 ```
+
+and edit it to show only ip addresses seperated by spaces.
 
 Build or run:
 
