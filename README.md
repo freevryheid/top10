@@ -1,5 +1,5 @@
 # top10
-Find top10 countries in a banned ip list
+Find top10 countries in a banned ip list using V
 
 This needs a list of "banned" ips seperated by spaces. I use fail2ban on a linux server. I generate bannedip list using:
 
