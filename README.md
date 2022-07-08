@@ -31,4 +31,5 @@ I get:
             Russian Federation: 89
 ```
 
+This lists the top 10 countries of suspects failing to gain access to my server. These could be hosts or compromised machines that are banned after numerous failed attempts to gain access as flagged by fail2ban. I typically have a list of around 3000+ banned ips.
 
