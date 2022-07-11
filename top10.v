@@ -1,11 +1,23 @@
 import os
+import json
 import regex
 import mods
 
+struct Add {
+	sshd []string
+}
+
 fn main() {
-	println('reading ...')
-	a := os.read_file('bannedip')?
-	ips := a.split(' ')
+	u := os.execute('id -u').output.trim_space()
+	if u.int() != 0 {
+		println('This program must be run as root!')
+		exit(1)
+	}
+	println("getting banned list ...")
+	mut s := os.execute('fail2ban-client banned').output
+	s = s.replace("'", '"')
+	d := json.decode([]Add, s)?
+	ips := d[0].sshd
 	n := ips.len
 	mut cty := []string{cap: n}
 	print('processing ')
@@ -35,4 +47,5 @@ fn main() {
 		}
 	}
 	println('bye.')
+
 }
