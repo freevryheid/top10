@@ -1,18 +1,18 @@
 # top10
 Find top10 countries in a banned ip list using V
 
-This needs a list of "banned" ips seperated by spaces. I use fail2ban on a linux server. I generate bannedip list using:
+This uses "sudo fail2ban-client banned" to generate a list of banned ips. Then the script uses the geoiplookup program to determine the contries.
+
+Build:
 
 ``` sh
-fail2ban-client status sshd > bannedip
+v -prod top10.v
 ```
 
-and edit it to show only ip addresses seperated by spaces. The script uses the geoiplookup program.
-
-Build or run:
+Run:
 
 ``` sh
-v run top10.v
+sudo ./top10
 ```
 
 I get:
